@@ -6,7 +6,7 @@
     "dev": "concurrently \"bun run dev:server\" \"bun run dev:client\"",
     "dev:server": "cd backend && bun run dev",
     "dev:client": "cd frontend && bun run dev",
-    "build": "bun run build-for-vercel.ts",
+    "build": "bun run build:server && bun run build:client",
     "build:server": "cd backend && bun install && bun run build",
     "build:client": "cd frontend && bun install && bun run build"
   },
