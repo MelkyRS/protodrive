@@ -39,7 +39,7 @@ graph LR
 ### 1. External Services Setup
 
 - **Discord**: Create a [Bot Application](https://discord.com/developers/applications), enable **Message Content Intent**, and copy the token.
-- **Supabase**: Create a project, run the `supabase_schema.sql` script in the SQL Editor, and copy your API credentials.
+- **Supabase**: Create a [project](https://supabase.com/), run the [`supabase_schema.sql`](https://github.com/rizzbrew/protodrive/blob/main/backend/supabase_schema.sql) script in the SQL Editor, and copy your API credentials.
 
 ### 2. Environment Variables
 
@@ -51,6 +51,7 @@ You will need the following keys:
 - `SUPABASE_SERVICE_ROLE_KEY`
 - `API_SECRET` (A custom shared secret between client and server)
 - `VITE_MASTER_KEY` (Your 32-char AES encryption key)
+- `VITE_API_SECRET`
 
 ### 3. Vercel Deployment
 
@@ -58,9 +59,9 @@ Simply connect your fork to vercel-cli. The project is configured to handle the 
 
 ## 🛠️ Local Development
 
-1. **Clone**: `git clone https://github.com/rizzbrew/proto-drive.git`
+1. **Clone**: `git clone https://github.com/rizzbrew/protodrive.git`
 2. **Install**: `bun run install:all`
-3. **Config**: Create `server/.env` based on `server/.env.example`.
+3. **Config**: Create `backend/.env` based on `backend/.env.example`.
 4. **Run**: `bun run dev`
 
 ## 📄 License & Disclaimer
