@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "bun run build",
+  "buildCommand": "cd backend && bun install && bun run build && cd ../frontend && bun install && bun run build && cd .. && mkdir -p .vercel/output/functions/api/index.func .vercel/output/static && cp api/index.js .vercel/output/functions/api/index.func/index.js && echo '{\"runtime\":\"nodejs20.x\",\"handler\":\"index.js\",\"launcherType\":\"Nodejs\"}' > .vercel/output/functions/api/index.func/.vc-config.json && cp -r dist/* .vercel/output/static/ && echo '{\"version\":3,\"routes\":[{\"src\":\"/api\",\"dest\":\"/api/index\"},{\"src\":\"/api/(.*)\",\"dest\":\"/api/index\"},{\"handle\":\"filesystem\"},{\"src\":\"/(.*)\",\"dest\":\"/index.html\"}]}' > .vercel/output/config.json",
   "outputDirectory": "dist",
   "rewrites": [
     {
