@@ -1,0 +1,30 @@
+{
+  "name": "protodrive",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"bun run dev:server\" \"bun run dev:client\"",
+    "dev:server": "cd backend && bun run dev",
+    "dev:client": "cd frontend && bun run dev",
+    "build": "bun run build:server && bun run build:client",
+    "build:server": "cd backend && bun install && bun run build",
+    "build:client": "cd frontend && bun install && bun run build"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "dependencies": {
+    "@supabase/supabase-js": "^2.95.3",
+    "@hono/node-server": "^1.13.1",
+    "concurrently": "^9.2.1",
+    "dotenv": "^17.2.4",
+    "hono": "^4.11.4",
+    "pino": "^10.3.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.9.3",
+    "esbuild": "^0.25.0"
+  }
+}

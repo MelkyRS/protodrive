@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "buildCommand": "bun run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/api(/.*)?",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/((?!api/|assets/|og-image.png|proto.svg).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
